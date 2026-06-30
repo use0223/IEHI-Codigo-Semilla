@@ -1,0 +1,38 @@
+# CODEOWNERS — Instituto de Expansión Humana Intergaláctica
+# Custodia inicial del Código Semilla
+# Durante la etapa fundacional, el custodio responsable es @use0223
+
+# Custodia general del repositorio
+* @use0223
+
+# Documento canónico y versiones oficiales
+/CODIGO_SEMILLA_v0.1-RC3.es.md @use0223
+/Codigo_Semilla_v0_1_RC3_IEHI.pdf @use0223
+
+# Política, contribución y reglas de custodia
+/CONTRIBUIR.md @use0223
+/POLITICA_DE_CUSTODIA.md @use0223
+/README.md @use0223
+
+# Memoria Civilizatoria
+/memoria-civilizatoria/ @use0223
+/memoria-civilizatoria/REGISTRO_FUNDACIONAL.md @use0223
+/memoria-civilizatoria/REGISTRO_DE_APORTES.md @use0223
+/memoria-civilizatoria/CRITERIOS_DE_RECONOCIMIENTO.md @use0223
+
+# Revisión pública
+/revision-v0.1/ @use0223
+/revision-v0.1/PLANTILLA_DE_REVISION.md @use0223
+
+# Traducciones
+/traducciones/ @use0223
+
+# Divulgación
+/divulgacion/ @use0223
+
+# Recursos visuales
+/recursos-visuales/ @use0223
+/IEHI_logo_transparente_recortado.png @use0223
+
+# Configuración de GitHub
+/.github/ @use0223
