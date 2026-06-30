@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Instituto de Expansión Humana Intergaláctica | Código Semilla</title>
+  <meta name="description" content="Código Semilla v0.1-RC3 del Instituto de Expansión Humana Intergaláctica. Revisión pública global." />
+
+  <style>
+    :root {
+      --bg: #050914;
+      --bg-soft: #0b1224;
+      --card: rgba(255, 255, 255, 0.06);
+      --card-border: rgba(255, 255, 255, 0.14);
+      --text: #f4f7fb;
+      --muted: #b9c3d6;
+      --gold: #d6a84f;
+      --blue: #4db3ff;
+      --deep-blue: #102b5c;
+      --danger: #ffb86b;
+      --max: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(77, 179, 255, 0.22), transparent 30%),
+        radial-gradient(circle at top right, rgba(214, 168, 79, 0.18), transparent 28%),
+        linear-gradient(180deg, #050914 0%, #081024 45%, #050914 100%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(16px);
+      background: rgba(5, 9, 20, 0.82);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .nav-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 14px 22px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 700;
+      letter-spacing: 0.4px;
+    }
+
+    .brand img {
+      width: 42px;
+      height: 42px;
+      object-fit: contain;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 18px;
+      font-size: 14px;
+      color: var(--muted);
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+    }
+
+    .hero {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 86px 22px 58px;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 44px;
+      align-items: center;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: 1px solid rgba(214, 168, 79, 0.45);
+      color: #f2d391;
+      background: rgba(214, 168, 79, 0.08);
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 14px;
+      margin-bottom: 22px;
+    }
+
+    h1 {
+      font-size: clamp(38px, 6vw, 72px);
+      line-height: 1.02;
+      margin: 0 0 22px;
+      letter-spacing: -2px;
+    }
+
+    .subtitle {
+      font-size: clamp(18px, 2.3vw, 25px);
+      color: var(--muted);
+      margin: 0 0 30px;
+      max-width: 760px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 28px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 18px;
+      border-radius: 12px;
+      font-weight: 700;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      transition: transform 0.15s ease, background 0.15s ease, border 0.15s ease;
+      min-height: 50px;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--blue), #2766ff);
+      color: white;
+      border-color: transparent;
+    }
+
+    .btn-gold {
+      background: linear-gradient(135deg, #e4bd67, #b7822c);
+      color: #071024;
+      border-color: transparent;
+    }
+
+    .btn-ghost {
+      background: rgba(255, 255, 255, 0.06);
+      color: var(--text);
+    }
+
+    .hero-card {
+      border: 1px solid var(--card-border);
+      background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.03));
+      border-radius: 28px;
+      padding: 30px;
+      box-shadow: 0 30px 100px rgba(0, 0, 0, 0.35);
+      text-align: center;
+    }
+
+    .hero-card img {
+      width: 100%;
+      max-width: 360px;
+      margin: 0 auto 10px;
+      display: block;
+    }
+
+    .status-grid {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 22px 40px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+
+    .status {
+      border: 1px solid var(--card-border);
+      background: var(--card);
+      border-radius: 18px;
+      padding: 18px;
+    }
+
+    .status strong {
+      display: block;
+      color: var(--gold);
+      margin-bottom: 4px;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+    }
+
+    .status span {
+      color: var(--text);
+      font-weight: 700;
+    }
+
+    section {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 58px 22px;
+    }
+
+    .section-title {
+      font-size: clamp(28px, 4vw, 44px);
+      line-height: 1.1;
+      margin: 0 0 18px;
+      letter-spacing: -1px;
+    }
+
+    .section-lead {
+      color: var(--muted);
+      font-size: 18px;
+      max-width: 880px;
+      margin: 0 0 30px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .card {
+      border: 1px solid var(--card-border);
+      background: var(--card);
+      border-radius: 22px;
+      padding: 22px;
+    }
+
+    .card h3 {
+      margin: 0 0 10px;
+      color: #ffffff;
+      font-size: 20px;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .notice {
+      border-left: 4px solid var(--gold);
+      background: rgba(214, 168, 79, 0.08);
+      border-radius: 16px;
+      padding: 20px;
+      color: #f7e5bd;
+      margin-top: 24px;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .step {
+      border: 1px solid var(--card-border);
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 22px;
+      padding: 22px;
+    }
+
+    .step small {
+      color: var(--gold);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+    }
+
+    .cta {
+      text-align: center;
+      border: 1px solid rgba(77, 179, 255, 0.28);
+      background:
+        radial-gradient(circle at top, rgba(77,179,255,0.22), transparent 38%),
+        rgba(255,255,255,0.05);
+      border-radius: 30px;
+      padding: 46px 24px;
+    }
+
+    .cta p {
+      color: var(--muted);
+      max-width: 820px;
+      margin: 0 auto 28px;
+      font-size: 18px;
+    }
+
+    footer {
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      color: var(--muted);
+      text-align: center;
+      padding: 34px 22px;
+      font-size: 14px;
+    }
+
+    @media (max-width: 900px) {
+      .hero {
+        grid-template-columns: 1fr;
+        padding-top: 56px;
+      }
+
+      .status-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .cards,
+      .steps {
+        grid-template-columns: 1fr;
+      }
+
+      .nav-inner {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .status-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-actions .btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="nav">
+    <div class="nav-inner">
+      <a class="brand" href="#">
+        <img src="./IEHI_logo_transparente_recortado.png" alt="Logotipo IEHI" />
+        <span>IEHI · Código Semilla</span>
+      </a>
+      <nav class="nav-links">
+        <a href="#codigo">Código Semilla</a>
+        <a href="#aportar">Aportar</a>
+        <a href="#nucleos">Núcleos</a>
+        <a href="#memoria">Memoria</a>
+        <a href="https://github.com/use0223/IEHI-Codigo-Semilla" target="_blank" rel="noopener">GitHub</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div>
+        <div class="badge">Revisión pública global · v0.1-RC3</div>
+        <h1>Instituto de Expansión Humana Intergaláctica</h1>
+        <p class="subtitle">
+          Una arquitectura abierta para organizar, preservar y acelerar el conocimiento necesario
+          para la continuidad y expansión responsable de la humanidad más allá de la Tierra.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="./CODIGO_SEMILLA_v0.1-RC3.es.md" target="_blank" rel="noopener">Leer Código Semilla</a>
+          <a class="btn btn-gold" href="./Codigo_Semilla_v0_1_RC3_IEHI.pdf" target="_blank" rel="noopener">Descargar PDF</a>
+          <a class="btn btn-ghost" href="https://github.com/use0223/IEHI-Codigo-Semilla/issues/1" target="_blank" rel="noopener">Enviar observación</a>
+          <a class="btn btn-ghost" href="https://github.com/use0223/IEHI-Codigo-Semilla/tree/main/propuestas/versiones-completas" target="_blank" rel="noopener">Propuesta completa</a>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <img src="./IEHI_logo_transparente_recortado.png" alt="Instituto de Expansión Humana Intergaláctica" />
+        <p>
+          No se presenta una institución terminada. Se presenta una semilla abierta para que la humanidad
+          la revise, la corrija y la fortalezca.
+        </p>
+      </div>
+    </section>
+
+    <div class="status-grid">
+      <div class="status">
+        <strong>Estado</strong>
+        <span>Candidato inicial</span>
+      </div>
+      <div class="status">
+        <strong>Fecha</strong>
+        <span>29 de junio de 2026</span>
+      </div>
+      <div class="status">
+        <strong>Revisión</strong>
+        <span>90 días sugeridos</span>
+      </div>
+      <div class="status">
+        <strong>Custodia</strong>
+        <span>Fundacional inicial</span>
+      </div>
+    </div>
+
+    <section id="codigo">
+      <h2 class="section-title">Qué es el Código Semilla</h2>
+      <p class="section-lead">
+        El Código Semilla v0.1-RC3 no es una versión final, ni una promesa de misiones inmediatas.
+        Es una base abierta para revisión científica, ética, técnica, legal, lingüística y organizativa.
+      </p>
+
+      <div class="cards">
+        <div class="card">
+          <h3>Archivo canónico</h3>
+          <p>GitHub funciona como bóveda pública del documento, sus versiones, registros y memoria histórica.</p>
+        </div>
+        <div class="card">
+          <h3>Código abierto custodiado</h3>
+          <p>Todos pueden leer y proponer. La versión canónica solo cambia mediante revisión, trazabilidad y custodia.</p>
+        </div>
+        <div class="card">
+          <h3>Horizonte profundo</h3>
+          <p>El Instituto adopta un horizonte de 5,000 años como criterio de diseño civilizatorio.</p>
+        </div>
+      </div>
+
+      <div class="notice">
+        La misión en esta etapa no es convencer a todos. La misión es que el documento llegue a quienes puedan aportar valor real.
+      </div>
+    </section>
+
+    <section id="aportar">
+      <h2 class="section-title">Cómo aportar sin complicarte</h2>
+      <p class="section-lead">
+        No necesitas saber usar GitHub para leer el documento. Para aportar, puedes enviar observaciones mediante el canal público de revisión.
+        Las propuestas serán revisadas antes de integrarse al documento canónico.
+      </p>
+
+      <div class="steps">
+        <div class="step">
+          <small>Paso 1</small>
+          <h3>Lee el documento</h3>
+          <p>Revisa el Código Semilla o descarga el PDF de lectura.</p>
+        </div>
+        <div class="step">
+          <small>Paso 2</small>
+          <h3>Detecta un aporte</h3>
+          <p>Puede ser error científico, riesgo ético, área faltante, mejora técnica, traducción o propuesta estructural.</p>
+        </div>
+        <div class="step">
+          <small>Paso 3</small>
+          <h3>Envía la observación</h3>
+          <p>Usa el canal de revisión pública. Tu aporte quedará registrado para análisis.</p>
+        </div>
+        <div class="step">
+          <small>Paso 4</small>
+          <h3>Custodia e integración</h3>
+          <p>Si el aporte fortalece el Código Semilla y respeta sus principios, podrá integrarse en futuras versiones.</p>
+        </div>
+      </div>
+
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="https://github.com/use0223/IEHI-Codigo-Semilla/issues/1" target="_blank" rel="noopener">Enviar observación</a>
+        <a class="btn btn-ghost" href="https://github.com/use0223/IEHI-Codigo-Semilla/tree/main/revision-v0.1" target="_blank" rel="noopener">Ver plantilla de revisión</a>
+        <a class="btn btn-ghost" href="https://github.com/use0223/IEHI-Codigo-Semilla/tree/main/propuestas/versiones-completas" target="_blank" rel="noopener">Proponer versión completa</a>
+      </div>
+    </section>
+
+    <section id="nucleos">
+      <h2 class="section-title">Núcleos Semilla iniciales</h2>
+      <p class="section-lead">
+        Los Núcleos Semilla son células científicas, técnicas y organizativas que permitirán dividir una misión civilizatoria en problemas medibles,
+        revisables y coordinados.
+      </p>
+
+      <div class="cards">
+        <div class="card"><h3>Comunicación Civilizatoria</h3><p>Traducción, interpretación, documentación multilingüe y comunicación global.</p></div>
+        <div class="card"><h3>Software Cósmico</h3><p>Herramientas digitales, agentes de investigación, datos, repositorios y seguridad.</p></div>
+        <div class="card"><h3>IA de Misión</h3><p>Asistencia, análisis, simulación, vigilancia y soporte de decisiones bajo control humano.</p></div>
+        <div class="card"><h3>Robótica Precursora</h3><p>Exploración, construcción, mapeo y preparación de entornos antes de misiones humanas.</p></div>
+        <div class="card"><h3>Medicina Espacial</h3><p>Salud, adaptación, prevención, longevidad, psicología y soporte humano de misión.</p></div>
+        <div class="card"><h3>Ética y Gobernanza</h3><p>Custodia, no privatización, memoria, reconocimiento y protección contra captura.</p></div>
+      </div>
+    </section>
+
+    <section id="memoria">
+      <h2 class="section-title">Memoria Civilizatoria</h2>
+      <p class="section-lead">
+        El Instituto buscará preservar la memoria de quienes ayuden a revisar, corregir, traducir, fortalecer, divulgar o construir conocimiento útil
+        para la continuidad civilizatoria de la humanidad.
+      </p>
+
+      <div class="notice">
+        Los resultados pertenecen a la humanidad. El reconocimiento pertenece a quienes los hacen posibles.
+      </div>
+
+      <div class="hero-actions">
+        <a class="btn btn-gold" href="https://github.com/use0223/IEHI-Codigo-Semilla/tree/main/memoria-civilizatoria" target="_blank" rel="noopener">Ver Memoria Civilizatoria</a>
+        <a class="btn btn-ghost" href="https://github.com/use0223/IEHI-Codigo-Semilla/blob/main/POLITICA_DE_CUSTODIA.md" target="_blank" rel="noopener">Política de Custodia</a>
+      </div>
+    </section>
+
+    <section>
+      <div class="cta">
+        <h2 class="section-title">Se abre la revisión pública</h2>
+        <p>
+          Buscamos crítica útil, fuentes, correcciones, traducciones, propuestas y revisión seria.
+          No se pide fe. No se pide obediencia. Se pide inteligencia crítica y construcción colectiva.
+        </p>
+        <div class="hero-actions" style="justify-content:center;">
+          <a class="btn btn-primary" href="https://github.com/use0223/IEHI-Codigo-Semilla" target="_blank" rel="noopener">Repositorio oficial</a>
+          <a class="btn btn-gold" href="https://github.com/use0223/IEHI-Codigo-Semilla/releases/tag/v0.1-RC3" target="_blank" rel="noopener">Release v0.1-RC3</a>
+          <a class="btn btn-ghost" href="https://github.com/use0223/IEHI-Codigo-Semilla/issues/1" target="_blank" rel="noopener">Participar en revisión</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    Instituto de Expansión Humana Intergaláctica · Protocolo Semilla · Código Semilla v0.1-RC3
+    <br />
+    La Tierra será el origen. La galaxia será el camino. La semilla humana no debe morir en un solo mundo.
+  </footer>
+</body>
+</html>
