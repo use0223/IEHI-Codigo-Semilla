@@ -179,7 +179,22 @@
       margin: 0 auto 10px;
       display: block;
     }
+    .visual-card {
+      padding: 14px;
+      overflow: hidden;
+    }
 
+    .visual-card .tree-visual {
+      width: 100%;
+      max-width: none;
+      border-radius: 22px;
+      margin-bottom: 16px;
+      display: block;
+    }
+
+    .visual-card p {
+      padding: 0 14px 10px;
+    }
     .status-grid {
       max-width: var(--max);
       margin: 0 auto;
@@ -377,11 +392,15 @@
         </div>
       </div>
 
-      <div class="hero-card">
-        <img src="./IEHI_logo_transparente_recortado.png" alt="Instituto de Expansión Humana Intergaláctica" />
+            <div class="hero-card visual-card">
+        <img
+          class="tree-visual"
+          src="./recursos-visuales/arbol-iehi.png"
+          alt="Árbol visual del Instituto: del IEHI a las células, misiones y colonias fuera del planeta"
+        />
         <p>
-          No se presenta una institución terminada. Se presenta una semilla abierta para que la humanidad
-          la revise, la corrija y la fortalezca.
+          El Instituto articula Núcleos Semilla que transforman conocimiento coordinado en resultados,
+          misiones no tripuladas, misiones tripuladas y futuras colonias fuera del planeta.
         </p>
       </div>
     </section>
