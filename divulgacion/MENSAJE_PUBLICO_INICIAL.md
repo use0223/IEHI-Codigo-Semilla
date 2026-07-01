@@ -1,7 +1,7 @@
 # Mensaje público inicial
 
 **Fecha de emisión:** 29 de junio de 2026
-**Versión:** Código Semilla v0.1-RC3
+**Versión:** Código Semilla v0.1-RC4
 **Institución:** Instituto de Expansión Humana Intergaláctica
 **Programa maestro:** Protocolo Semilla
 **Estado:** candidato inicial para revisión pública global
@@ -10,7 +10,7 @@
 
 ---
 
-Se abre públicamente el **Código Semilla v0.1-RC3** del **Instituto de Expansión Humana Intergaláctica**.
+Se abre públicamente el **Código Semilla v0.1-RC4** del **Instituto de Expansión Humana Intergaláctica**.
 
 Esta versión no se presenta como una verdad final, una institución terminada ni una promesa de misiones inmediatas.
 
@@ -36,15 +36,15 @@ Se solicitan observaciones sobre:
 
 El documento principal se encuentra en:
 
-`CODIGO_SEMILLA_v0.1-RC3.es.md`
+`CODIGO_SEMILLA_v0.1-RC4.es.md`
 
 La versión PDF de lectura se encuentra en:
 
-`Codigo_Semilla_v0_1_RC3_IEHI.pdf`
+`Codigo_Semilla_v0_1_RC4_IEHI.pdf`
 
 La revisión pública inicial está abierta en:
 
-`Issue #1 — Revisión pública del Código Semilla v0.1-RC3`
+`Issue #1 — Revisión pública del Código Semilla v0.1-RC4`
 
 ---
 

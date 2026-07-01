@@ -55,27 +55,27 @@ Ningún documento del Instituto deberá asumir que el lector ya conoce una abrev
 6. Declaración fundacional  
 7. Principios universales del Código Semilla  
 8. Código abierto custodiado  
-8.5 Gobernanza interna, custodia y bifurcación protegida  
-9. Doctrina de la frontera del conocimiento existente  
-10. Arquitectura institucional  
-11. Protocolo de coordinación intercelular  
-12. Protección institucional, permisos y asistencia a las células  
-13. Núcleos Semilla iniciales y misiones por área  
-14. Centro de Comunicación Civilizatoria  
-15. Protocolo multilingüe del Código Semilla  
-16. Idioma operativo en misiones humanas  
-17. Inteligencia Artificial, software y datos  
-18. Cerebro Local de Misión  
-19. Misiones precursoras  
-20. Registro Cartográfico de Memoria Civilizatoria  
-21. Misiones humanas colonizadoras  
-22. Código de convivencia y resolución de conflictos  
-23. Transmisión pública y resultados abiertos  
-24. Financiamiento, entidad legal y no privatización  
-25. Áreas abiertas para revisión científica  
-26. Proceso de revisión pública y transición hacia v1.0  
-27. Glosario inicial  
-28. Cierre
+9. Gobernanza interna, custodia y bifurcación protegida  
+10. Doctrina de la frontera del conocimiento existente  
+11. Arquitectura institucional  
+12. Protocolo de coordinación intercelular  
+13. Protección institucional, permisos y asistencia a las células  
+14. Núcleos Semilla iniciales y misiones por área  
+15. Centro de Comunicación Civilizatoria  
+16. Protocolo multilingüe del Código Semilla  
+17. Idioma operativo en misiones humanas  
+18. Inteligencia Artificial, software y datos  
+19. Cerebro Local de Misión  
+20. Misiones precursoras  
+21. Registro Cartográfico de Memoria Civilizatoria  
+22. Misiones humanas colonizadoras  
+23. Código de convivencia y resolución de conflictos  
+24. Transmisión pública y resultados abiertos  
+25. Financiamiento, entidad legal y no privatización  
+26. Áreas abiertas para revisión científica  
+27. Proceso de revisión pública y transición hacia v1.0  
+28. Glosario inicial  
+29. Cierre
 
 ---
 
@@ -280,7 +280,7 @@ El modelo evolucionará así:
 El objetivo no será concentrar poder.  
 El objetivo será proteger la misión mientras la comunidad correcta se forma.
 
-### 8.5 Gobernanza interna, custodia y bifurcación protegida
+## 9. Gobernanza interna, custodia y bifurcación protegida
 
 El Instituto de Expansión Humana Intergaláctica, el Código Semilla y la misión civilizatoria que los sostiene no podrán pertenecer a una persona, gobierno, país, empresa, partido, organización privada, financiador o grupo cerrado.
 
@@ -337,7 +337,7 @@ La bifurcación no será un ataque. Será un mecanismo de preservación si la cu
 
 ---
 
-## 9. Doctrina de la frontera del conocimiento existente
+## 10. Doctrina de la frontera del conocimiento existente
 
 El Instituto no redescubrirá lo que la humanidad ya descubrió. Lo recopilará, lo verificará, lo organizará y avanzará desde ahí.
 
@@ -366,7 +366,7 @@ Cada célula comenzará donde termina la memoria científica de la humanidad.
 
 ---
 
-## 10. Arquitectura institucional
+## 11. Arquitectura institucional
 
 El Instituto operará como una red coordinada de Núcleos Semilla.
 
@@ -374,23 +374,23 @@ La estructura operativa será:
 
 **Instituto -> Núcleos Semilla -> Subcélulas Semilla -> Equipos de misión -> Entregables medibles.**
 
-### 10.1 Núcleos Semilla
+### 11.1 Núcleos Semilla
 
 Son células científicas o técnicas principales. Cada una posee un dominio de investigación, custodios, misión, mapa de conocimiento, glosario, objetivos y entregables.
 
-### 10.2 Subcélulas Semilla
+### 11.2 Subcélulas Semilla
 
 Son grupos especializados dentro de un Núcleo.
 
 Ejemplo: dentro del Núcleo Semilla de Software Cósmico pueden existir subcélulas de agentes de investigación, simulación de misiones, interfaces multimodales, ciberseguridad y memoria digital.
 
-### 10.3 Equipos de misión
+### 11.3 Equipos de misión
 
 Son grupos temporales o permanentes que integran varias células para resolver una necesidad concreta de una misión.
 
 ---
 
-## 11. Protocolo de coordinación intercelular
+## 12. Protocolo de coordinación intercelular
 
 Ninguna célula deberá resolver sola problemas que requieren múltiples disciplinas.
 
@@ -412,7 +412,7 @@ El objetivo será evitar duplicación, contradicción, aislamiento técnico y p�
 
 ---
 
-## 12. Protección institucional, permisos y asistencia a las células
+## 13. Protección institucional, permisos y asistencia a las células
 
 El Instituto de Expansión Humana Intergaláctica tendrá la responsabilidad de proteger, asistir y respaldar a sus Núcleos Semilla y Subcélulas Semilla mientras realizan trabajos de investigación, documentación, exploración, diseño, experimentación o actividades de campo.
 
@@ -453,111 +453,111 @@ La protección institucional existirá para que las células puedan cumplir su m
 
 ---
 
-## 13. Núcleos Semilla iniciales y misiones por área
+## 14. Núcleos Semilla iniciales y misiones por área
 
 La siguiente lista no es definitiva. La comunidad científica podrá proponer correcciones, fusiones, nuevas áreas o prioridades.
 
-### 13.1 Núcleo Semilla de Comunicación Civilizatoria
+### 14.1 Núcleo Semilla de Comunicación Civilizatoria
 
 **Misión:** diseñar, operar y mantener el Centro de Comunicación Civilizatoria: traducción, interpretación, glosarios, documentación multilingüe, preparación lingüística y comunicación entre células internacionales.
 
-### 13.2 Núcleo Semilla de Software Cósmico
+### 14.2 Núcleo Semilla de Software Cósmico
 
 **Misión:** crear software para coordinación científica, simulación de colonias, navegación autónoma, análisis planetario, control robótico, agentes de IA y preservación digital del conocimiento.
 
-### 13.3 Núcleo Semilla de Inteligencia Artificial de Misión y Sistemas Guardianes
+### 14.3 Núcleo Semilla de Inteligencia Artificial de Misión y Sistemas Guardianes
 
 **Misión:** diseñar agentes de IA para vigilancia 24/7, detección temprana, asistencia a tripulaciones, soporte a robots, análisis de sensores y protección operativa bajo supervisión humana.
 
-### 13.4 Núcleo Semilla de Geodestas Planetarios
+### 14.4 Núcleo Semilla de Geodestas Planetarios
 
 **Misión:** estudiar, medir y mapear planetas, lunas, asteroides y cuerpos celestes para identificar zonas de exploración, minería, construcción, refugio y colonización.
 
-### 13.5 Núcleo Semilla de Utilización de Recursos In Situ (ISRU)
+### 14.5 Núcleo Semilla de Utilización de Recursos In Situ (ISRU)
 
 **Misión:** desarrollar métodos para extraer, procesar y usar recursos locales en otros mundos: agua, hielo, regolito, minerales, dióxido de carbono, oxígeno, combustibles y materiales de construcción.
 
-### 13.6 Núcleo Semilla de Robótica Precursora
+### 14.6 Núcleo Semilla de Robótica Precursora
 
 **Misión:** diseñar robots exploradores, perforadores, constructores, reparadores, transportadores y asistentes que preparen entornos antes de la llegada humana.
 
-### 13.7 Núcleo Semilla de Arquitectura Planetaria
+### 14.7 Núcleo Semilla de Arquitectura Planetaria
 
 **Misión:** diseñar hábitats, cámaras presurizadas, refugios subterráneos, estructuras contra radiación, ciudades iniciales y espacios habitables en otros mundos.
 
-### 13.8 Núcleo Semilla de Propulsión y Astrodinámica
+### 14.8 Núcleo Semilla de Propulsión y Astrodinámica
 
 **Misión:** investigar transporte espacial, trayectorias interplanetarias, navegación, motores, velas solares, velas láser, propulsión nuclear y futuras tecnologías interestelares.
 
-### 13.9 Núcleo Semilla de Química y Materiales de Misión
+### 14.9 Núcleo Semilla de Química y Materiales de Misión
 
 **Misión:** investigar aleaciones, combustibles, catalizadores, blindajes, materiales resistentes a radiación, protección de equipos, protección térmica y soluciones químicas para misiones.
 
-### 13.10 Núcleo Semilla de Comunicaciones Interplanetarias y Redes Satelitales
+### 14.10 Núcleo Semilla de Comunicaciones Interplanetarias y Redes Satelitales
 
 **Misión:** diseñar satélites, repetidores, antenas, protocolos de transmisión y redes orbitales para conectar Tierra, naves, robots, hábitats y colonias.
 
-### 13.11 Núcleo Semilla de Energía y Supervivencia
+### 14.11 Núcleo Semilla de Energía y Supervivencia
 
 **Misión:** resolver generación, almacenamiento y distribución de energía en entornos extremos: energía solar, nuclear, baterías, celdas de combustible y sistemas de emergencia.
 
-### 13.12 Núcleo Semilla de Ecosistemas Cerrados
+### 14.12 Núcleo Semilla de Ecosistemas Cerrados
 
 **Misión:** diseñar sistemas capaces de producir alimento, reciclar agua, mantener oxígeno, procesar residuos y sostener vida humana en hábitats aislados.
 
-### 13.13 Núcleo Semilla de Agronomía Espacial y Sistemas de Cultivo
+### 14.13 Núcleo Semilla de Agronomía Espacial y Sistemas de Cultivo
 
 **Misión:** investigar hidroponía, aeroponía, cultivos en microgravedad, cultivos en gravedad lunar o marciana, ciclos cerrados de nutrientes y producción alimentaria fuera de la Tierra.
 
-### 13.14 Núcleo Semilla de Medicina Espacial y Salud de Colonias
+### 14.14 Núcleo Semilla de Medicina Espacial y Salud de Colonias
 
 **Misión:** estudiar salud física, radiación, medicina de emergencia, telemedicina, cirugía asistida, farmacología espacial, reproducción, huesos, músculos, sueño y aislamiento.
 
-### 13.15 Núcleo Semilla de Psicología Operativa y Adaptación Humana
+### 14.15 Núcleo Semilla de Psicología Operativa y Adaptación Humana
 
 **Misión:** preparar a humanos para aislamiento, estrés, duelo, conflictos, convivencia prolongada, permanencia sin retorno inmediato y cohesión de tripulación.
 
-### 13.16 Núcleo Semilla de Selección Humana, Psicología y Convivencia de Misión
+### 14.16 Núcleo Semilla de Selección Humana, Psicología y Convivencia de Misión
 
 **Misión:** diseñar criterios de selección, entrenamiento, filtros de salud, madurez, convivencia, liderazgo, resolución de conflictos y protección humana para misiones colonizadoras.
 
-### 13.17 Núcleo Semilla de Biotecnología y Longevidad Radical
+### 14.17 Núcleo Semilla de Biotecnología y Longevidad Radical
 
 **Misión:** investigar extensión de vida activa, reparación celular, órganos artificiales, biostasis, continuidad cognitiva y preservación de memoria funcional. No promete inmortalidad; trabaja sobre frontera científica.
 
-### 13.18 Núcleo Semilla de Conectómica y Conciencia Digital
+### 14.18 Núcleo Semilla de Conectómica y Conciencia Digital
 
 **Misión:** estudiar cerebro, memoria, identidad, Interfaz Cerebro-Computadora (BCI), preservación de funciones cognitivas y límites éticos de la digitalización mental.
 
-### 13.19 Núcleo Semilla de Electrónica Espacial
+### 14.19 Núcleo Semilla de Electrónica Espacial
 
 **Misión:** diseñar circuitos, sensores, sistemas embebidos, redundancia, electrónica resistente a radiación y control de equipos para misiones.
 
-### 13.20 Núcleo Semilla de Nanotecnología y Microfabricación
+### 14.20 Núcleo Semilla de Nanotecnología y Microfabricación
 
 **Misión:** investigar materiales nanoestructurados, recubrimientos, sensores miniaturizados, superficies protectoras, nanomedicina y componentes ultraligeros.
 
-### 13.21 Núcleo Semilla de Servidores, Datos y Memoria de Misión
+### 14.21 Núcleo Semilla de Servidores, Datos y Memoria de Misión
 
 **Misión:** diseñar almacenamiento local, bases de datos, redes internas, respaldo de información, sincronización con Tierra y preservación de datos científicos de misión.
 
-### 13.22 Núcleo Semilla de Ciberseguridad y Protección de Sistemas
+### 14.22 Núcleo Semilla de Ciberseguridad y Protección de Sistemas
 
 **Misión:** proteger repositorios, servidores, comunicaciones, IA, satélites, naves, robots y datos contra sabotaje, errores, infiltración o manipulación.
 
-### 13.23 Núcleo Semilla de Ética y Gobernanza Cósmica
+### 14.23 Núcleo Semilla de Ética y Gobernanza Cósmica
 
 **Misión:** diseñar principios éticos, derechos, deberes, modelos de gobierno, límites científicos y resolución institucional para comunidades humanas fuera de la Tierra.
 
-### 13.24 Núcleo Semilla de Memoria Civilizatoria
+### 14.24 Núcleo Semilla de Memoria Civilizatoria
 
 **Misión:** preservar conocimiento esencial en repositorios digitales, físicos, distribuidos y resistentes al colapso: archivos, planos, códigos, libros, idiomas, historia y cultura.
 
-### 13.25 Núcleo Semilla de Transmisión Pública y Divulgación de Misión
+### 14.25 Núcleo Semilla de Transmisión Pública y Divulgación de Misión
 
 **Misión:** definir cómo el mundo verá misiones en vivo, qué resultados se publican, qué datos se protegen y cómo convertir cada misión en educación global.
 
-### 13.26 Núcleo Semilla de Relaciones Institucionales, Permisos y Protección de Campo
+### 14.26 Núcleo Semilla de Relaciones Institucionales, Permisos y Protección de Campo
 
 **Misión:** gestionar permisos, convenios, cartas institucionales, apoyo legal, respaldo logístico y protocolos de seguridad para que los Núcleos Semilla puedan realizar su trabajo sin interrupciones indebidas.
 
@@ -565,7 +565,7 @@ Este Núcleo será responsable de abrir puertas ante universidades, laboratorios
 
 ---
 
-## 14. Centro de Comunicación Civilizatoria
+## 15. Centro de Comunicación Civilizatoria
 
 El Instituto reconoce que una misión perteneciente a la humanidad no puede quedar limitada por idioma, nación, cultura o región.
 
@@ -580,7 +580,7 @@ Buscará que todos los idiomas puedan trabajar para una sola misión.
 
 ---
 
-## 15. Protocolo multilingüe del Código Semilla
+## 16. Protocolo multilingüe del Código Semilla
 
 El Código Semilla podrá recibir contribuciones en cualquier idioma.
 
@@ -607,7 +607,7 @@ Ninguna traducción automática será considerada canónica sin revisión humana
 
 ---
 
-## 16. Idioma operativo en misiones humanas
+## 17. Idioma operativo en misiones humanas
 
 Durante investigación, diseño y coordinación global, todos los idiomas serán bienvenidos.
 
@@ -621,7 +621,7 @@ En investigación, todos los idiomas son bienvenidos. En misión crítica, todos
 
 ---
 
-## 17. Inteligencia Artificial, software y datos
+## 18. Inteligencia Artificial, software y datos
 
 La Inteligencia Artificial (IA) será una herramienta central del Instituto.
 
@@ -641,7 +641,7 @@ Todo agente de IA deberá conservar fuentes, advertencias de incertidumbre, nive
 
 ---
 
-## 18. Cerebro Local de Misión
+## 19. Cerebro Local de Misión
 
 Toda misión avanzada, tripulada o no tripulada, deberá contar con un **Cerebro Local de Misión**.
 
@@ -668,7 +668,7 @@ La Tierra guía. La misión interpreta. La Inteligencia Artificial asiste. La vi
 
 ---
 
-## 19. Misiones precursoras
+## 20. Misiones precursoras
 
 Una línea estratégica inicial será el diseño teórico de misiones precursoras no tripuladas.
 
@@ -693,7 +693,7 @@ Primero llegan los satélites. Después los mapas. Después los robots. Después
 
 ---
 
-## 20. Registro Cartográfico de Memoria Civilizatoria
+## 21. Registro Cartográfico de Memoria Civilizatoria
 
 Cuando el Instituto mapee regiones de Marte, lunas, asteroides u otros cuerpos celestes, podrá asignar nombres operativos dentro de sus mapas internos para reconocer contribuciones reales.
 
@@ -709,7 +709,7 @@ Esta práctica no implica propiedad territorial. Implica memoria, organización 
 
 ---
 
-## 21. Misiones humanas colonizadoras
+## 22. Misiones humanas colonizadoras
 
 Las misiones humanas de colonización requerirán una doctrina propia.
 
@@ -734,7 +734,7 @@ Nadie deberá ser enviado como sacrificio.
 
 ---
 
-## 22. Código de convivencia y resolución de conflictos
+## 23. Código de convivencia y resolución de conflictos
 
 Toda misión humana de larga duración deberá contar con un Código de Convivencia y Resolución de Conflictos antes del lanzamiento.
 
@@ -754,7 +754,7 @@ La primera colonia humana no debe ser solo técnicamente viable. Debe ser emocio
 
 ---
 
-## 23. Transmisión pública y resultados abiertos
+## 24. Transmisión pública y resultados abiertos
 
 El Instituto buscará que las misiones espaciales, tripuladas y no tripuladas, puedan ser observadas por la humanidad de forma abierta, educativa y transparente cuando sea seguro hacerlo.
 
@@ -772,7 +772,7 @@ El mundo deberá poder mirar. La ciencia deberá poder aprender. La misión debe
 
 ---
 
-## 24. Financiamiento, entidad legal y no privatización
+## 25. Financiamiento, entidad legal y no privatización
 
 El proyecto puede iniciar como movimiento abierto sin entidad propia.
 
@@ -799,7 +799,7 @@ El dinero podrá sostener la misión, pero no podrá poseerla.
 
 ---
 
-## 25. Áreas abiertas para revisión científica
+## 26. Áreas abiertas para revisión científica
 
 El Código Semilla v0.1-RC4 no pretende haber integrado todas las ciencias necesarias.
 
@@ -833,13 +833,13 @@ El diseño debe completarse con inteligencia colectiva.
 
 ---
 
-## 26. Proceso de revisión pública y transición hacia v1.0
+## 27. Proceso de revisión pública y transición hacia v1.0
 
 Esta sección no contiene instrucciones internas para el fundador ni tareas privadas de preparación. Define el proceso público mediante el cual la comunidad podrá revisar, corregir y fortalecer el Código Semilla v0.1-RC4 antes de la publicación de una versión v1.0.
 
 La versión v0.1-RC4 se dirige a científicos, estudiantes, ingenieros, médicos, programadores, traductores, especialistas en ética, juristas, investigadores independientes, divulgadores y personas con capacidad real de aportar a la precisión, claridad, seguridad y utilidad del documento.
 
-### 26.1 Apertura de revisión
+### 27.1 Apertura de revisión
 
 Al publicarse el Código Semilla v0.1-RC4, el Instituto abrirá un periodo inicial de revisión pública global de 90 días.
 
@@ -856,7 +856,7 @@ Durante este periodo, la comunidad podrá revisar el documento para detectar:
 9. Fallas de traducción o interpretación multilingüe.
 10. Mejoras de estructura, trazabilidad y documentación.
 
-### 26.2 Forma de participación
+### 27.2 Forma de participación
 
 Las contribuciones podrán enviarse en cualquier idioma. Cada aporte deberá conservar su idioma original, su traducción cuando sea necesaria, la identidad o seudónimo del contribuyente si este desea registrarlo, la fecha de recepción y el estado de revisión.
 
@@ -864,7 +864,7 @@ Las contribuciones podrán presentarse como comentarios, propuestas, Issues, Pul
 
 Ninguna persona externa podrá modificar directamente la versión canónica del Código Semilla durante esta etapa. Toda contribución deberá pasar por revisión, trazabilidad y aprobación antes de integrarse al documento oficial.
 
-### 26.3 Clasificación de aportes
+### 27.3 Clasificación de aportes
 
 Cada aporte recibido deberá clasificarse en una o más categorías:
 
@@ -882,7 +882,7 @@ Cada aporte recibido deberá clasificarse en una o más categorías:
 
 Un aporte podrá ser aceptado, rechazado, archivado para revisión posterior o marcado como pendiente de fuentes, traducción o validación especializada.
 
-### 26.4 Integración de cambios
+### 27.4 Integración de cambios
 
 Los cambios aceptados deberán registrarse de forma pública y trazable. Cada modificación relevante deberá indicar qué cambió, por qué cambió, quién propuso el cambio, quién lo revisó y en qué versión fue incorporado.
 
@@ -890,7 +890,7 @@ Cuando un cambio afecte afirmaciones científicas, médicas, técnicas, éticas,
 
 El objetivo de la revisión no será defender el documento original, sino mejorarlo. Una corrección bien fundamentada será considerada una contribución a la misión, no una amenaza a la autoridad fundacional.
 
-### 26.5 Cierre de revisión y publicación de v1.0
+### 27.5 Cierre de revisión y publicación de v1.0
 
 Al finalizar el periodo inicial de revisión, el Instituto preparará un informe de cambios y una versión corregida del documento: Código Semilla v1.0.
 
@@ -904,7 +904,7 @@ Regla de transición:
 
 ---
 
-## 27. Glosario inicial
+## 28. Glosario inicial
 
 **Código Semilla:** documento y arquitectura abierta del Instituto.
 
@@ -934,7 +934,7 @@ Regla de transición:
 
 ---
 
-## 28. Cierre
+## 29. Cierre
 
 No se presenta una institución terminada.  
 Se presenta una semilla abierta para que la humanidad la revise, la corrija y la fortalezca.

@@ -1,6 +1,6 @@
 # Cómo contribuir al Código Semilla
 
-Gracias por tu interés en revisar, corregir o fortalecer el **Código Semilla v0.1-RC3** del **Instituto de Expansión Humana Intergaláctica**.
+Gracias por tu interés en revisar, corregir o fortalecer el **Código Semilla v0.1-RC4** del **Instituto de Expansión Humana Intergaláctica**.
 
 Esta versión se encuentra en revisión pública global. No es una versión final.
 
@@ -35,7 +35,7 @@ No se aceptarán ataques personales, propaganda política, apropiación privada 
 
 El documento principal en español es:
 
-`CODIGO_SEMILLA_v0.1-RC3.es.md`
+`CODIGO_SEMILLA_v0.1-RC4.es.md`
 
 Esa versión es el punto de referencia inicial.
 
