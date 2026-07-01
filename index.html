@@ -1042,15 +1042,15 @@
           </p>
         </aside>
 
-        <form class="form-panel" aria-label="Formulario visual de envío de aportes">
+        <form class="form-panel" id="iehi-contribution-form" aria-label="Formulario visual de envío de aportes">
           <div class="form-grid">
             <label class="field">
               Nombre público o identificador
-              <input type="text" name="nombre-publico" placeholder="Ej. A. Rivera / Equipo Andrómeda" />
+              <input type="text" name="nombre-publico" placeholder="Ej. A. Rivera / Equipo Andrómeda" required />
             </label>
             <label class="field">
               Correo electrónico
-              <input type="email" name="correo" placeholder="nombre@ejemplo.org" />
+              <input type="email" name="correo" placeholder="nombre@ejemplo.org" required />
             </label>
             <label class="field">
               País o región
@@ -1062,7 +1062,7 @@
             </label>
             <label class="field">
               Tipo de aporte
-              <select name="tipo-aporte">
+              <select name="tipo-aporte" required>
                 <option value="">Selecciona una opción</option>
                 <option>Corrección científica o técnica</option>
                 <option>Fuente o referencia</option>
@@ -1078,7 +1078,7 @@
             </label>
             <label class="field full">
               Aporte escrito
-              <textarea name="aporte" placeholder="Escribe aquí tu observación, corrección, propuesta o explicación."></textarea>
+              <textarea name="aporte" placeholder="Escribe aquí tu observación, corrección, propuesta o explicación." required></textarea>
             </label>
             <label class="field">
               Enlace de archivo opcional
@@ -1112,11 +1112,11 @@
             </label>
           </div>
 
-          <p class="form-note">
-            Formulario no conectado. No hay envío real, almacenamiento, webhooks ni integración externa en esta versión.
+          <p class="form-note" id="iehi-form-status" role="status" aria-live="polite">
+            Completa el formulario para preparar tu aporte al IEHI.
           </p>
-          <button class="btn btn-primary disabled-submit" type="button" aria-disabled="true">
-            Envío pendiente de conexión
+          <button class="btn btn-primary" type="submit">
+            Enviar aporte
           </button>
         </form>
       </div>
@@ -1142,5 +1142,74 @@
     <br />
     La Tierra es el origen. La continuidad humana requiere memoria, custodia y colaboración global.
   </footer>
+
+  <script>
+    const IEHI_CONTRIBUTION_WEBHOOK_URL = "https://usedig.app.n8n.cloud/webhook/iehi-contribution-intake";
+
+    const contributionForm = document.getElementById("iehi-contribution-form");
+    const contributionStatus = document.getElementById("iehi-form-status");
+
+    contributionForm.addEventListener("submit", async (event) => {
+      event.preventDefault();
+
+      if (!contributionForm.reportValidity()) {
+        return;
+      }
+
+      if (!IEHI_CONTRIBUTION_WEBHOOK_URL.trim()) {
+        contributionStatus.textContent = "La recepción digital aún no está conectada. Inténtalo nuevamente más tarde.";
+        return;
+      }
+
+      const submitButton = contributionForm.querySelector('button[type="submit"]');
+      const originalButtonText = submitButton.textContent;
+      const formData = new FormData(contributionForm);
+      const archivo = formData.get("archivo")?.trim() || "";
+      const fuente = formData.get("fuente")?.trim() || "";
+
+      const payload = {
+        nombre_publico_o_identificador: formData.get("nombre-publico")?.trim() || "",
+        correo: formData.get("correo")?.trim() || "",
+        pais_o_region: formData.get("region")?.trim() || "",
+        idioma: formData.get("idioma")?.trim() || "",
+        tipo_de_aporte: formData.get("tipo-aporte") || "",
+        seccion_relacionada: formData.get("seccion")?.trim() || "",
+        contenido_del_aporte: formData.get("aporte")?.trim() || "",
+        enlace_de_archivo_o_referencia_si_existe: [archivo, fuente].filter(Boolean).join(" | "),
+        enlace_de_archivo: archivo,
+        fuente_o_referencia: fuente,
+        consentimiento: formData.get("consentimiento") === "on",
+        autorizacion_reconocimiento_publico: formData.get("memoria") === "on",
+        autorizacion_notificaciones_correo: formData.get("notificaciones") === "on",
+        fecha_hora_envio: new Date().toISOString(),
+        origen: "iehi-public-form"
+      };
+
+      submitButton.disabled = true;
+      submitButton.textContent = "Enviando...";
+
+      try {
+        const response = await fetch(IEHI_CONTRIBUTION_WEBHOOK_URL, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(payload)
+        });
+
+        if (!response.ok) {
+          throw new Error("Contribution webhook request failed.");
+        }
+
+        contributionStatus.textContent = "Tu aporte ha sido recibido. Revisa tu correo: hemos enviado un acuse de recibo. Se te notificará cuando tu aporte sea revisado y, si es aprobado, cuando sea anexado al Código canónico.";
+        contributionForm.reset();
+      } catch {
+        contributionStatus.textContent = "No pudimos enviar tu aporte en este momento. Inténtalo nuevamente más tarde.";
+      } finally {
+        submitButton.disabled = false;
+        submitButton.textContent = originalButtonText;
+      }
+    });
+  </script>
 </body>
 </html>
