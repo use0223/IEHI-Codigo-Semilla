@@ -1045,8 +1045,8 @@
         <form class="form-panel" id="iehi-contribution-form" aria-label="Formulario visual de envío de aportes">
           <div class="form-grid">
             <label class="field">
-              Nombre público o identificador
-              <input type="text" name="nombre-publico" placeholder="Ej. A. Rivera / Equipo Andrómeda" required />
+              Nombre de la persona o identificador público
+              <input type="text" name="nombre-publico" placeholder="Ej. Ana Rivera" required />
             </label>
             <label class="field">
               Correo electrónico
@@ -1063,12 +1063,14 @@
             <label class="field">
               Tipo de aporte
               <select name="tipo-aporte" required>
-                <option value="">Selecciona una opción</option>
+                <option value="" disabled selected>Selecciona una opción</option>
                 <option>Corrección científica o técnica</option>
-                <option>Fuente o referencia</option>
-                <option>Traducción</option>
-                <option>Propuesta ética o legal</option>
-                <option>Mejora de comunicación</option>
+                <option>Corrección doctrinal o conceptual</option>
+                <option>Fuente, evidencia o referencia</option>
+                <option>Traducción o mejora lingüística</option>
+                <option>Propuesta ética, legal o de gobernanza</option>
+                <option>Propuesta para Núcleos Semilla o implementación</option>
+                <option>Mejora de comunicación o divulgación</option>
                 <option>Otro aporte</option>
               </select>
             </label>
@@ -1078,11 +1080,16 @@
             </label>
             <label class="field full">
               Aporte escrito
-              <textarea name="aporte" placeholder="Escribe aquí tu observación, corrección, propuesta o explicación." required></textarea>
+              <textarea name="aporte" placeholder="Escribe aquí tu observación, corrección, propuesta o explicación."></textarea>
             </label>
             <label class="field">
               Enlace de archivo opcional
               <input type="url" name="archivo" placeholder="https://..." />
+            </label>
+            <label class="field full">
+              Archivo, imagen o versión modificada del Código Semilla (opcional)
+              <input type="file" name="archivo" multiple accept=".pdf,.doc,.docx,.md,.txt,.png,.jpg,.jpeg,.webp" />
+              <span>Puedes adjuntar un documento, imagen, PDF, Markdown, Word o una versión modificada del Código Semilla. El archivo será recibido para revisión; no modifica automáticamente el Código canónico.</span>
             </label>
             <label class="field">
               Fuente o referencia opcional
@@ -1164,8 +1171,16 @@
       const submitButton = contributionForm.querySelector('button[type="submit"]');
       const originalButtonText = submitButton.textContent;
       const formData = new FormData(contributionForm);
-      const archivo = formData.get("archivo")?.trim() || "";
+      const archivoValues = formData.getAll("archivo");
+      const archivo = archivoValues.find((value) => typeof value === "string")?.trim() || "";
+      const archivosAdjuntos = archivoValues.filter((value) => value instanceof File && value.name);
       const fuente = formData.get("fuente")?.trim() || "";
+      const aporte = formData.get("aporte")?.trim() || "";
+
+      if (!aporte && archivosAdjuntos.length === 0) {
+        contributionStatus.textContent = "Escribe tu aporte o adjunta un archivo para revisión.";
+        return;
+      }
 
       const payload = {
         nombre_publico_o_identificador: formData.get("nombre-publico")?.trim() || "",
@@ -1174,7 +1189,7 @@
         idioma: formData.get("idioma")?.trim() || "",
         tipo_de_aporte: formData.get("tipo-aporte") || "",
         seccion_relacionada: formData.get("seccion")?.trim() || "",
-        contenido_del_aporte: formData.get("aporte")?.trim() || "",
+        contenido_del_aporte: aporte,
         enlace_de_archivo_o_referencia_si_existe: [archivo, fuente].filter(Boolean).join(" | "),
         enlace_de_archivo: archivo,
         fuente_o_referencia: fuente,
@@ -1185,16 +1200,19 @@
         origen: "iehi-public-form"
       };
 
+      const multipartData = new FormData();
+      multipartData.append("payload", JSON.stringify(payload));
+      archivosAdjuntos.forEach((file) => {
+        multipartData.append("archivo", file);
+      });
+
       submitButton.disabled = true;
       submitButton.textContent = "Enviando...";
 
       try {
         const response = await fetch(IEHI_CONTRIBUTION_WEBHOOK_URL, {
           method: "POST",
-          headers: {
-            "Content-Type": "application/json"
-          },
-          body: JSON.stringify(payload)
+          body: multipartData
         });
 
         if (!response.ok) {
