@@ -1,4 +1,4 @@
-# Plantilla de revisión del Código Semilla v0.1-RC3
+# Plantilla de revisión del Código Semilla v0.1-RC4
 
 Utiliza esta plantilla para enviar observaciones, correcciones o propuestas sobre el Código Semilla.
 
