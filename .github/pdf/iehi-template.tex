@@ -1,0 +1,122 @@
+\documentclass[11pt,letterpaper]{article}
+
+\usepackage{fontspec}
+\setmainfont{$if(mainfont)$$mainfont$$else$Noto Serif$endif$}
+\setsansfont{$if(sansfont)$$sansfont$$else$Noto Sans$endif$}
+\setmonofont{$if(monofont)$$monofont$$else$Noto Sans Mono$endif$}
+
+\usepackage[spanish,es-noquoting]{babel}
+\usepackage[margin=1in,headheight=18pt,headsep=20pt,footskip=34pt]{geometry}
+\usepackage[table]{xcolor}
+\usepackage{graphicx}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{microtype}
+
+\definecolor{IEHIBlueDeep}{HTML}{0A172A}
+\definecolor{IEHIBlue}{HTML}{17608F}
+\definecolor{IEHISky}{HTML}{69C9FF}
+\definecolor{IEHIGold}{HTML}{E0B55C}
+\definecolor{IEHILight}{HTML}{F4F8FC}
+\definecolor{IEHIGray}{HTML}{5F6F82}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=IEHIBlue,
+  urlcolor=IEHIBlue,
+  citecolor=IEHIBlue,
+  pdftitle={Código Semilla $version$},
+  pdfauthor={Instituto de Expansión Humana Intergaláctica}
+}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.65em}
+\setlist{itemsep=0.25em, topsep=0.35em}
+\emergencystretch=3em
+\hyphenpenalty=8000
+\exhyphenpenalty=8000
+\sloppy
+
+\titleformat{\section}
+  {\Large\bfseries\color{IEHIBlueDeep}}
+  {\thesection}{0.7em}{}
+  [\vspace{0.15em}{\color{IEHIGold}\titlerule[0.7pt]}]
+
+\titleformat{\subsection}
+  {\large\bfseries\color{IEHIBlue}}
+  {\thesubsection}{0.7em}{}
+
+\titleformat{\subsubsection}
+  {\normalsize\bfseries\color{IEHIBlue}}
+  {\thesubsubsection}{0.7em}{}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\sffamily\small Instituto de Expansión Humana Intergaláctica · Código Semilla $version$}
+\fancyfoot[C]{\sffamily\small Código Semilla $version$ · Página \thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\renewcommand{\headrule}{\hbox to\headwidth{\color{IEHISky}\leaders\hrule height \headrulewidth\hfill}}
+\renewcommand{\footrule}{\hbox to\headwidth{\color{IEHIGold}\leaders\hrule height \footrulewidth\hfill}}
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\providecommand{\passthrough}[1]{#1}
+\providecommand{\pandocbounded}[1]{#1}
+
+\begin{document}
+
+\begin{titlepage}
+\thispagestyle{empty}
+\centering
+\vspace*{0.15in}
+
+\includegraphics[width=0.28\textwidth]{$logo$}
+
+\vspace{0.45in}
+
+{\sffamily\bfseries\color{IEHIBlueDeep}\fontsize{34}{40}\selectfont CÓDIGO SEMILLA\par}
+\vspace{0.12in}
+{\sffamily\bfseries\color{IEHIGold}\Large $version$\par}
+
+\vspace{0.32in}
+
+{\sffamily\Large Instituto de Expansión Humana Intergaláctica\par}
+\vspace{0.06in}
+{\sffamily\large Programa maestro: Protocolo Semilla\par}
+
+\vspace{0.45in}
+
+\arrayrulecolor{IEHISky}
+\renewcommand{\arraystretch}{1.42}
+\begin{tabular}{>{\sffamily\bfseries\color{IEHIBlueDeep}}p{0.34\textwidth} p{0.5\textwidth}}
+\toprule
+Estado & $estado$ \\
+Horizonte institucional & $horizonte$ \\
+Idioma canónico inicial & $idioma$ \\
+Naturaleza & $naturaleza$ \\
+Versión & $version$ \\
+Fecha de emisión & $fecha$ \\
+Principio rector & Los resultados pertenecen a la humanidad; el reconocimiento pertenece a quienes los hacen posibles. \\
+\bottomrule
+\end{tabular}
+
+\vfill
+
+{\color{IEHIGold}\rule{0.72\textwidth}{1.1pt}\par}
+\vspace{0.16in}
+{\sffamily\small\color{IEHIGray}
+Documento de revisión pública - No es una institución terminada. Es una semilla abierta para ser revisada, corregida y fortalecida.
+\par}
+\end{titlepage}
+
+\setcounter{page}{1}
+
+$body$
+
+\end{document}

@@ -25,7 +25,14 @@ jobs:
       - name: Install PDF toolchain
         run: |
           sudo apt-get update
-          sudo apt-get install -y pandoc texlive-xetex texlive-latex-recommended texlive-latex-extra fonts-noto
+          sudo apt-get install -y pandoc texlive-xetex texlive-latex-recommended texlive-latex-extra texlive-lang-spanish fonts-noto
+
+      - name: Verify PDF logo exists
+        run: |
+          if [ ! -f "IEHI_logo_transparente_recortado.png" ]; then
+            echo "Required PDF logo not found: IEHI_logo_transparente_recortado.png"
+            exit 1
+          fi
 
       - name: Detect latest Codigo Semilla version
         id: version
@@ -55,23 +62,62 @@ jobs:
             raise SystemExit("No CODIGO_SEMILLA_*.es.md files found.")
 
           _, _, markdown_file, current_version, pdf_file = sorted(candidates)[-1]
+          markdown_text = Path(markdown_file).read_text(encoding="utf-8")
+
+          def read_field(label, default):
+            field = re.search(rf"^\*\*{re.escape(label)}:\*\*\s*(.+?)\s*$", markdown_text, re.MULTILINE)
+            return field.group(1).strip() if field else default
+
+          estado = read_field("Estado", "candidato inicial para revisión pública global")
+          horizonte = read_field("Horizonte institucional", "5,000 años")
+          idioma = read_field("Idioma canónico inicial", "español")
+          naturaleza = read_field("Naturaleza", "código abierto civilizatorio custodiado")
+          fecha = read_field("Fecha de emisión", "")
 
           with open(os.environ["GITHUB_OUTPUT"], "a", encoding="utf-8") as output:
             output.write(f"markdown_file={markdown_file}\n")
             output.write(f"current_version={current_version}\n")
             output.write(f"pdf_file={pdf_file}\n")
+            output.write(f"estado={estado}\n")
+            output.write(f"horizonte={horizonte}\n")
+            output.write(f"idioma={idioma}\n")
+            output.write(f"naturaleza={naturaleza}\n")
+            output.write(f"fecha={fecha}\n")
+
+      - name: Prepare PDF body without duplicated cover metadata
+        shell: python
+        run: |
+          import re
+          from pathlib import Path
+
+          markdown_file = Path("${{ steps.version.outputs.markdown_file }}")
+          markdown_text = markdown_file.read_text(encoding="utf-8")
+          section = re.search(r"^(?:#{1,6}\s*)?0\.\s+Estado del documento\s*$", markdown_text, re.MULTILINE)
+
+          if not section:
+            raise SystemExit("Could not find section: 0. Estado del documento")
+
+          build_dir = Path(".build")
+          build_dir.mkdir(exist_ok=True)
+          Path(".build/codigo-semilla-body.md").write_text(markdown_text[section.start():], encoding="utf-8")
 
       - name: Generate PDF
         run: |
-          pandoc "${{ steps.version.outputs.markdown_file }}" \
+          pandoc ".build/codigo-semilla-body.md" \
             --from markdown \
             --pdf-engine=xelatex \
+            --template=".github/pdf/iehi-template.tex" \
             --metadata title="Código Semilla ${{ steps.version.outputs.current_version }}" \
             -V mainfont="Noto Serif" \
             -V sansfont="Noto Sans" \
             -V monofont="Noto Sans Mono" \
-            -V geometry:margin=1in \
-            -V colorlinks=true \
+            -V logo="IEHI_logo_transparente_recortado.png" \
+            -V version="${{ steps.version.outputs.current_version }}" \
+            -V estado="${{ steps.version.outputs.estado }}" \
+            -V horizonte="${{ steps.version.outputs.horizonte }}" \
+            -V idioma="${{ steps.version.outputs.idioma }}" \
+            -V naturaleza="${{ steps.version.outputs.naturaleza }}" \
+            -V fecha="${{ steps.version.outputs.fecha }}" \
             -o "${{ steps.version.outputs.pdf_file }}"
 
       - name: Update current version manifest
