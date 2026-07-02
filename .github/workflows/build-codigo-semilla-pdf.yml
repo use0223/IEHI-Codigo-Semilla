@@ -100,8 +100,9 @@ jobs:
           body_text = markdown_text[section.start():]
           body_text = body_text.replace("\ufeff", "")
           body_text = re.sub(r"[\u200b\u200c\u200d\u2060]", "", body_text)
+          body_text = body_text.replace("\u00ad", "")
           body_text = body_text.replace("\u00a0", " ")
-          body_text = re.sub(r"(?m)^(\s*)[•‣⁃]\s+", r"\1- ", body_text)
+          body_text = re.sub(r"(?m)^(\s*)[•‣⁃◦]\s+", r"\1- ", body_text)
 
           build_dir = Path(".build")
           build_dir.mkdir(exist_ok=True)
