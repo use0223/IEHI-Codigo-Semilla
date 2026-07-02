@@ -1,0 +1,104 @@
+name: Build Codigo Semilla PDF
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "CODIGO_SEMILLA_*.es.md"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build-pdf:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Install PDF toolchain
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y pandoc texlive-xetex texlive-latex-recommended texlive-latex-extra fonts-noto
+
+      - name: Detect latest Codigo Semilla version
+        id: version
+        shell: python
+        run: |
+          import os
+          import re
+          from pathlib import Path
+
+          pattern = re.compile(r"^CODIGO_SEMILLA_(v\d+(?:\.\d+)*)(?:-RC(\d+))?\.es\.md$")
+          candidates = []
+
+          for path in Path(".").glob("CODIGO_SEMILLA_*.es.md"):
+            match = pattern.match(path.name)
+            if not match:
+              continue
+
+            version = match.group(1)
+            rc = match.group(2)
+            parts = tuple(int(part) for part in version[1:].split("."))
+            rc_rank = int(rc) if rc is not None else 10**9
+            current_version = f"{version}-RC{rc}" if rc is not None else version
+            pdf_version = current_version.replace(".", "_").replace("-", "_")
+            candidates.append((parts, rc_rank, path.name, current_version, f"Codigo_Semilla_{pdf_version}_IEHI.pdf"))
+
+          if not candidates:
+            raise SystemExit("No CODIGO_SEMILLA_*.es.md files found.")
+
+          _, _, markdown_file, current_version, pdf_file = sorted(candidates)[-1]
+
+          with open(os.environ["GITHUB_OUTPUT"], "a", encoding="utf-8") as output:
+            output.write(f"markdown_file={markdown_file}\n")
+            output.write(f"current_version={current_version}\n")
+            output.write(f"pdf_file={pdf_file}\n")
+
+      - name: Generate PDF
+        run: |
+          pandoc "${{ steps.version.outputs.markdown_file }}" \
+            --from markdown \
+            --pdf-engine=xelatex \
+            --metadata title="Código Semilla ${{ steps.version.outputs.current_version }}" \
+            -V mainfont="Noto Serif" \
+            -V sansfont="Noto Sans" \
+            -V monofont="Noto Sans Mono" \
+            -V geometry:margin=1in \
+            -V colorlinks=true \
+            -o "${{ steps.version.outputs.pdf_file }}"
+
+      - name: Update current version manifest
+        shell: python
+        run: |
+          import json
+          import os
+          from datetime import datetime, timezone
+
+          manifest = {
+            "current_version": "${{ steps.version.outputs.current_version }}",
+            "markdown_file": "${{ steps.version.outputs.markdown_file }}",
+            "pdf_file": "${{ steps.version.outputs.pdf_file }}",
+            "updated_at": datetime.now(timezone.utc).date().isoformat()
+          }
+
+          with open("iehi-current-version.json", "w", encoding="utf-8") as file:
+            json.dump(manifest, file, ensure_ascii=False, indent=2)
+            file.write("\n")
+
+      - name: Commit generated PDF and manifest
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add "${{ steps.version.outputs.pdf_file }}" iehi-current-version.json
+          if git diff --cached --quiet; then
+            echo "No generated changes to commit."
+            exit 0
+          fi
+          git commit -m "Build Codigo Semilla PDF for ${{ steps.version.outputs.current_version }}"
+          git push
