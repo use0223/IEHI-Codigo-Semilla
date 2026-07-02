@@ -97,9 +97,15 @@ jobs:
           if not section:
             raise SystemExit("Could not find section: 0. Estado del documento")
 
+          body_text = markdown_text[section.start():]
+          body_text = body_text.replace("\ufeff", "")
+          body_text = re.sub(r"[\u200b\u200c\u200d\u2060]", "", body_text)
+          body_text = body_text.replace("\u00a0", " ")
+          body_text = re.sub(r"(?m)^(\s*)[•‣⁃]\s+", r"\1- ", body_text)
+
           build_dir = Path(".build")
           build_dir.mkdir(exist_ok=True)
-          Path(".build/codigo-semilla-body.md").write_text(markdown_text[section.start():], encoding="utf-8")
+          Path(".build/codigo-semilla-body.md").write_text(body_text, encoding="utf-8")
 
       - name: Generate PDF
         run: |
@@ -127,11 +133,14 @@ jobs:
           import os
           from datetime import datetime, timezone
 
+          generated_at = datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z")
+
           manifest = {
             "current_version": "${{ steps.version.outputs.current_version }}",
             "markdown_file": "${{ steps.version.outputs.markdown_file }}",
             "pdf_file": "${{ steps.version.outputs.pdf_file }}",
-            "updated_at": datetime.now(timezone.utc).date().isoformat()
+            "updated_at": generated_at.split("T")[0],
+            "generated_at": generated_at
           }
 
           with open("iehi-current-version.json", "w", encoding="utf-8") as file:
