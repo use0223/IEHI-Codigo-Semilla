@@ -6,7 +6,7 @@
 \setmonofont{$if(monofont)$$monofont$$else$Noto Sans Mono$endif$}
 
 \usepackage[spanish,es-noquoting]{babel}
-\usepackage[margin=1in,headheight=18pt,headsep=20pt,footskip=34pt]{geometry}
+\usepackage[margin=0.9in,headheight=18pt,headsep=20pt,footskip=34pt]{geometry}
 \usepackage[table]{xcolor}
 \usepackage{graphicx}
 \usepackage{array}
@@ -17,6 +17,7 @@
 \usepackage{enumitem}
 \usepackage{hyperref}
 \usepackage{microtype}
+\usepackage[none]{hyphenat}
 
 \definecolor{IEHIBlueDeep}{HTML}{0A172A}
 \definecolor{IEHIBlue}{HTML}{17608F}
@@ -36,24 +37,27 @@
 
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{0.65em}
-\setlist{itemsep=0.25em, topsep=0.35em}
+\setlist{itemsep=0.24em, topsep=0.32em, leftmargin=1.45em}
 \emergencystretch=3em
-\hyphenpenalty=8000
-\exhyphenpenalty=8000
+\pretolerance=10000
+\tolerance=2000
+\hyphenpenalty=10000
+\exhyphenpenalty=10000
 \sloppy
+\setcounter{secnumdepth}{0}
 
 \titleformat{\section}
   {\Large\bfseries\color{IEHIBlueDeep}}
-  {\thesection}{0.7em}{}
+  {}{0pt}{}
   [\vspace{0.15em}{\color{IEHIGold}\titlerule[0.7pt]}]
 
 \titleformat{\subsection}
   {\large\bfseries\color{IEHIBlue}}
-  {\thesubsection}{0.7em}{}
+  {}{0pt}{}
 
 \titleformat{\subsubsection}
   {\normalsize\bfseries\color{IEHIBlue}}
-  {\thesubsubsection}{0.7em}{}
+  {}{0pt}{}
 
 \pagestyle{fancy}
 \fancyhf{}
@@ -74,27 +78,29 @@
 \begin{titlepage}
 \thispagestyle{empty}
 \centering
-\vspace*{0.15in}
+\enlargethispage{0.6in}
+\vspace*{-0.18in}
 
-\includegraphics[width=0.28\textwidth]{$logo$}
+\includegraphics[width=0.145\textwidth]{$logo$}
 
-\vspace{0.45in}
-
-{\sffamily\bfseries\color{IEHIBlueDeep}\fontsize{34}{40}\selectfont CÓDIGO SEMILLA\par}
 \vspace{0.12in}
-{\sffamily\bfseries\color{IEHIGold}\Large $version$\par}
 
-\vspace{0.32in}
+{\sffamily\bfseries\color{IEHIBlueDeep}\fontsize{27}{31}\selectfont CÓDIGO SEMILLA\par}
+\vspace{0.04in}
+{\sffamily\bfseries\color{IEHIGold}\large $version$\par}
 
-{\sffamily\Large Instituto de Expansión Humana Intergaláctica\par}
-\vspace{0.06in}
-{\sffamily\large Programa maestro: Protocolo Semilla\par}
+\vspace{0.12in}
 
-\vspace{0.45in}
+{\sffamily\normalsize Instituto de Expansión Humana Intergaláctica\par}
+\vspace{0.02in}
+{\sffamily\small Programa maestro: Protocolo Semilla\par}
+
+\vspace{0.14in}
 
 \arrayrulecolor{IEHISky}
-\renewcommand{\arraystretch}{1.42}
-\begin{tabular}{>{\sffamily\bfseries\color{IEHIBlueDeep}}p{0.34\textwidth} p{0.5\textwidth}}
+\renewcommand{\arraystretch}{1.08}
+\footnotesize
+\begin{tabular}{>{\sffamily\bfseries\color{IEHIBlueDeep}}p{0.29\textwidth} p{0.55\textwidth}}
 \toprule
 Estado & $estado$ \\
 Horizonte institucional & $horizonte$ \\
@@ -109,13 +115,11 @@ Principio rector & Los resultados pertenecen a la humanidad; el reconocimiento p
 \vfill
 
 {\color{IEHIGold}\rule{0.72\textwidth}{1.1pt}\par}
-\vspace{0.16in}
-{\sffamily\small\color{IEHIGray}
+\vspace{0.05in}
+{\sffamily\scriptsize\color{IEHIGray}
 Documento de revisión pública - No es una institución terminada. Es una semilla abierta para ser revisada, corregida y fortalecida.
 \par}
 \end{titlepage}
-
-\setcounter{page}{1}
 
 $body$
 
